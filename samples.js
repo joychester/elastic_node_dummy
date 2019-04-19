@@ -78,20 +78,28 @@ const bulkInsertDoc = function() {
 		index: 'test_0417',
 		type: 'bulk',
 		body: [
-		    { index: {_index: 'test_0417', _type: 'bulk', _id: '1004' } },
-            {
-              'Name': 'test1004',
-              'ID': '1004',
-              'ValueA': '8483948903',
-              'ValueB': '3267684444'
-            }]
-		    }, function(err, resp, status) {
-		    	if(err) {
-		    		console.log(err);
-		    	} else {
-		    		console.log(resp);
-		    	}
-		    });
+			{ index: {_index: 'test_0419', _type: 'bulk', _id: 5 } },
+			{
+			  'Name': 'test1005',
+			  'ID': '1005',
+			  'ValueA': '55555555',
+			  'ValueB': '55555555'
+			},
+			{ index: {_index: 'test_0419', _type: 'bulk', _id: 6 } },
+			{
+			  'Name': 'test1006',
+			  'ID': '1006',
+			  'ValueA': '66666666',
+			  'ValueB': '66666666'
+			},
+		      ]
+		}, function(err, resp, status) {
+		   if(err) {
+		    console.log(err);
+		   } else {
+		    console.log(resp);
+		   }
+		});
 }
 
 //bulkInsertDoc();
