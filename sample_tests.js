@@ -1,4 +1,4 @@
-const ESclient = require('./elastic_connect.js');
+const ESclient = require('./es_connect');
 
 //Function: check current status of your cluster
 const checkHealth = function() {
