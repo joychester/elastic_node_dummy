@@ -103,3 +103,22 @@ const bulkInsertDoc = function() {
 }
 
 //bulkInsertDoc();
+
+// Function: Search document by query string
+const queryDoc = function(idx_name, query_obj, type_name) {
+  ESclient.search({
+    index: idx_name,
+    type: type_name,
+    body: {
+      query: query_obj,
+    }
+  }).then(function(resp) {
+    resp.body.hits.hits.forEach(function(hit) {
+      console.log(hit._source);
+    });
+  }, function(err) {
+    console.trace(err.message);
+  });
+}
+
+//queryDoc('test_0419', { match: { "Name": 'test1005' } }, '');
